@@ -9,4 +9,4 @@ venv/
 *.json
 
 #config app
-Backend/app.config
+.Backend/app.config

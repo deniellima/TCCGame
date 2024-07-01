@@ -1,10 +1,11 @@
 from firebase_admin import auth
 from flask import Flask, request, render_template, redirect, url_for, session, flash
 import config
+import os
 
 config.connection
 
-app = Flask(__name__, template_folder='../')
+app = Flask(__name__, template_folder='../', static_folder='../')
 app.config.from_object('config')
 
 @app.route('/')
@@ -96,4 +97,4 @@ def logout():
     return redirect(url_for('login'))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)), debug=True)

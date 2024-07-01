@@ -1,2 +1,3 @@
 firebase_admin==6.5.0
+waitress==3.0.0
 Flask==2.3.2

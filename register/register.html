@@ -9,7 +9,7 @@
     <!--Fonts--> <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!--Icons--> <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
     
-    <link rel="stylesheet" href="register.css"/><!-- href="{{ url_for('static', filename='register.css') }}"  -->
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
@@ -51,7 +51,7 @@
         
         <div class="footer">
             <p>Já possui uma conta? </p>
-            <a class="link" href="../login/login.html">Login</a>
+            <a class="link" href="{{url_for('login')}}">Login</a>
         </div>
     </div> 
 
