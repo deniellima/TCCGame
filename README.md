@@ -22,12 +22,12 @@ python manage.py runserver
 
 ## Usando container docker
 
-1. puxar container:
+1. build container:
 ```bash
-docker pull gustavomichelads/tccgamesapp
+docker compose build
 ```
 
-2. rodar container:
+2. up container:
 ```bash
-docker run -p 8000:8000 gustavomichelads/tccgamesapp
+docker compose up
 ```

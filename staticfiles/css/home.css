@@ -1,0 +1,270 @@
+@import url('root.css');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+/*-------------------- PreSets --------------------*/
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Titles */
+
+h1 {
+    color: var(--text-color);
+}
+
+h3 {
+    color: var(--primary-color);
+}
+
+/* Text */
+
+p {
+    display: block;
+    font-size: var(--text-size);
+    font-weight: var(--font-weight);
+}
+
+label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    font-size: var(--label-size);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+button {
+    width: 180px;
+}
+
+/*-------------------- Header --------------------*/
+
+header {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 32px;
+    display: flex;
+}
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+/*-------------------- Hanking --------------------*/
+
+.folder {
+    display: flex;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 32px;
+}
+
+.container-pontuation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 32px 80px;
+    width: 100%;
+    box-sizing: content-box;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 16px;
+    box-shadow: var(--boxshadow-container)
+}
+
+.pontuation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: none;
+    width: 100%;
+}
+
+.image {
+    width: 360px;
+    height: 360px;
+}
+
+.container-hanking {
+    padding: 32px;
+    width: 392px;
+    box-sizing: content-box;
+    gap: 24px;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 12px;
+    box-shadow: var(--boxshadow-container);
+}
+
+.hanking {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    gap: 16px;
+}
+
+.position {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.position-ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+#gold {
+    background-color: #ffd700;
+}
+
+#silver {
+    background-color: #c0c0c0;
+}
+
+#bronze {
+    background-color: #cd7f32;
+}
+
+#see-hanking {
+    text-align: center;
+}
+
+.text-hanking {
+    font-family: 'Josefin Sans' sans-serif;
+    font-family: 700;
+    color: var(--white);
+    font-size: 20px;
+}
+
+/*-------------------- Cards --------------------*/
+
+.games {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 12%;
+    padding-right: 12%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 32px;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+#gameMemory {
+    background-color: var(--gameMemory-color);
+}
+
+#gameLinguage {
+    background-color: var(--gameLinguage-color);
+}
+
+#gameHangman {
+    background-color: var(--gameHangman-color);
+}
+
+#gameWord {
+    background-color: var(--gameWord-color);
+}
+
+#gameNumber {
+    background-color: var(--gameNumber-color);
+}
+
+#gameWordle {
+    background-color: var(--gameWordle-color);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    width: 160px;
+    height: 160px;
+    cursor: pointer;
+    transition: 0.1s;
+    user-select: none;
+    gap: 4px;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 0.4em;
+    box-shadow: var(--boxshadow);
+    text-align: center;
+}
+
+.card:hover {
+    border: var(--border-grey);
+    box-shadow: var(--boxshadow-hover);
+    transform: translateY(2px);
+    transition: 0.1s;
+}
+
+.card:active {
+    border: var(--border-grey);
+    box-shadow: var(--boxshadow-active);
+    transform: translateY(4px);
+}
+
+#icon {
+    font-size: 50px;
+    color: var(--white);
+}
+
+.card-text {
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+    color: var(--white);
+}
+
+/*-------------------- Footer --------------------*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 32px 12%;
+    margin-top: 50px;
+    border-top: var(--border-grey);
+    background-color: var(--white);
+}
+
+.copyright {
+    font-size: var(--label-size);
+}

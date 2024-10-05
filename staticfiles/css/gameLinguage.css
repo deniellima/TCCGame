@@ -1,0 +1,127 @@
+@import url('root.css');
+
+/*--------------------PreSets--------------------*/
+
+body {
+    background-color: var(--gameLinguage-color);
+}
+
+/* Text */
+
+p {
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+}
+
+label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    font-size: var(--label-size);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.wrapper {
+  box-sizing: content-box;
+  width: 36em;
+  padding: 2em 2em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+
+  background-color: var(--white);
+  border: var(--border-grey);
+  border-radius: 16px;
+  box-shadow: var(--boxshadow-container);
+}
+
+/*--------------------Controls--------------------*/
+
+.controls-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--gameLinguage-color);
+  height: 100vh;
+  width: 100vw;
+  gap: 32px;
+}
+
+/*--------------------Content--------------------*/
+
+.num-of-tries-left {
+  text-align: right;
+  margin-bottom: 32px;
+}
+
+.num-of-tries-left span {
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  user-select: none;
+}
+
+.container {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  user-select: none;
+}
+
+#letter-container {
+  margin: 32px 0 32px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.letters {
+  width: 56px;
+  height: 56px;
+  padding: none;
+  background-color: var(--gameLinguage-color);
+  border: var(--border-grey);
+  border-radius: 8px;
+  cursor: pointer;
+
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  color: var(--white);
+  user-select: none;
+}
+
+#userInputSection {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  font-size: var(--font-size);
+  font-weight: var(--font-weight);
+  user-select: none;
+  letter-spacing: 0%;
+}
+
+.hide {
+  display: none;
+}
+
+.used {
+  background-color: var(--alternative);
+  font-size: 14px;
+  font-weight: var(--font-weight);
+  color: var(--text-color);
+  border: none;
+  user-select: none;
+}

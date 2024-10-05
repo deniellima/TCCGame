@@ -1,0 +1,126 @@
+@import url('root.css');
+
+/*--------------------PreSets--------------------*/
+
+body {
+    background-color: var(--primary-color);
+}
+
+/* Titles */
+
+h1 h2 h3 h4 h5 h6{
+    color: var(--primary-color);
+}
+
+/* Text */
+
+p {
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+}
+
+label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: underline;
+    font-size: var(--label-size);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    margin-top: 32px;
+}
+
+/* Input */
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+    padding-left: 12px;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 6px;
+    box-shadow: var(--boxshadow);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+input::placeholder {
+    color: var(--placehoder-color);
+}
+
+input:hover {
+    box-shadow: var(--boxshadow-hover);
+    transform: translateY(2px);
+    transition: 0.1s;
+}
+
+input:focus {
+    box-shadow: none;
+    transform: translateY(4px);
+    transition: 0.1s;
+}
+
+/*--------------------Content--------------------*/
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-sizing: content-box;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+
+    padding: 48px;
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 16px;
+    box-shadow: var(--boxshadow-container);
+}
+
+.required-color {
+    color: var(--error);
+}
+
+.error-message {
+    margin-top: 4px;
+}
+
+.error {
+    border-color: var(--error);
+}
+
+.valid {
+    border-color: var(--sucess);
+}
+
+.hide {
+    display: none;
+}
+
+.footer {
+    margin-top: 24px;
+}

@@ -22,6 +22,7 @@
 
     <div class="container">
         <form autocomplete="off" action="{% url 'forgotPassword' %}" method="post">
+            {% csrf_token %}
 
             <h4>Esqueceu a senha?</h4>
 

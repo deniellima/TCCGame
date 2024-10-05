@@ -1,0 +1,189 @@
+/*--------------------Root--------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+
+    /*Colors*/
+    --primary-color: #0074ef;
+    --text-color: #333333;
+    --placehoder-color: #999999;
+    --background-color: #ece6de;
+    --white: #ffffff;
+    --alternative: #f5f5f5;
+
+    --sucess: #2D842D;
+    --error: #C53737;
+
+    /*games*/
+    --gameMemory-color: #ef476f;
+    --gameLinguage-color: #9d7cff;
+
+    /*Paragraph*/
+    --font-size: 16px;
+    --label-size: 14px;
+    --font-weight: 500;
+
+    /*Elements*/
+    --border-grey: 2px solid #333333;
+    --border-error: 2px solid #6D1F1F;
+    --border-sucess: 2px solid #194A19;
+
+    --boxshadow: 4px 4px #00000040;
+    --boxshadow-hover: 2px 2px #00000040;
+    --boxshadow-container: 8px 8px #00000040;
+    --border-radius: 8px;
+}
+
+/*--------------------PreSets--------------------*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+/* Titles */
+
+h1 {
+    font-size: 96px;
+    font-weight: bold;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+h2 {
+    font-size: 64px;
+    font-weight: bold;
+    user-select: none;
+    line-height: 0.9;
+}
+
+h3 {
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+h4 {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    user-select: none;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 600;
+    user-select: none;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    user-select: none;
+}
+
+/* Text */
+
+p {
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+}
+
+label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: var(--label-size);
+    font-weight: var(--font-weight);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: underline;
+    font-size: var(--label-size);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+/*-------------------- Navegation --------------------*/
+
+.nav-container {
+    position: absolute;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    justify-content: left;
+    align-content: start;
+    margin: 32px;
+    gap: 16px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 50px;
+    transition: 0.1s;
+    user-select: none;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 0.4em;
+    box-shadow: var(--boxshadow);
+
+    font-size: 18px;
+    font-weight: 500;
+}
+
+#back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+    user-select: none;
+
+    background-color: var(--white);
+    border: var(--border-grey);
+    border-radius: 0.4em;
+    box-shadow: var(--boxshadow);
+
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+}
+
+#back:hover {
+    border: var(--border-grey);
+    box-shadow: var(--boxshadow-hover);
+    transform: translateY(2px);
+    transition: 0.1s;
+}
+
+#back:active {
+    border: var(--border-grey);
+    box-shadow: var(--boxshadow-active);
+    transform: translateY(4px);
+}
+
+#icon {
+    font-size: 20px;
+}

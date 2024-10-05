@@ -14,6 +14,17 @@ def register(request):
             name = request.POST.get('name')
             email = request.POST.get('email')
             password = request.POST.get('password')
+
+            if User.objects.filter(email=email).exists():
+                messages.error(request, 'O e-mail já está registrado.')
+                return render(request, 'userRegister.html', {'error': 'O e-mail já está registrado.'})
+
+            user_django = User.objects.create_user(
+                username=name,
+                email=email, 
+                password=password
+            )
+
             user = auth.create_user(
                 display_name=name,
                 email=email,
@@ -21,7 +32,8 @@ def register(request):
                 email_verified=False,
             )
             auth.generate_email_verification_link(user.email)
-            messages.success(request, f'Usuário criado com sucesso: {user.display_name}')
+
+            messages.success(request, f'Usuário criado com sucesso: {user.display_name}.  Verifique seu email: {user_django.email} para completar a verificação.')
             return redirect(reverse('login'))
         except Exception as e:
             messages.error(request, f'Erro ao criar usuário: {e}')
@@ -34,21 +46,24 @@ def login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
+        print(f"Email: {email}")
+        print(f"Password: {password}")
+
         try:
-
             user_django = authenticate(request, email=email, password=password)
-            firebase_user = auth.get_user_by_email(email)
-            
+            print(f"User Django: {user_django}")
 
-            if user_django is not None:
+            firebase_user = auth.get_user_by_email(email)
+            print(f"Firebase User: {firebase_user}")
+
+            if user_django is not None and firebase_user is not None:
                 auth_login(request, user_django)
                 messages.success(request, 'Login realizado com sucesso!')
                 return redirect('account')
             else:
-                new_user_django = User.objects.create_user(username=firebase_user.display_name, email=email, password=password)
-                auth_login(request, new_user_django)
-                messages.success(request, 'Login realizado com sucesso!')
-                return redirect('account')
+                print("User Django ou Firebase User é None")
+                messages.error(request, 'Credenciais inválidas ou usuário não registrado.')
+                return redirect('register')
         except Exception as e:
             messages.error(request, f'Erro ao fazer login: {e}')
             return render(request, 'userLogin.html', {'erro': 'Credenciais inválidas. Tente novamente.'})
