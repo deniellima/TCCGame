@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse
-from app.settings import firebase, db
+from app.config import firebase, db
 from django.http import JsonResponse
 from .decorators import login_required
 
@@ -65,7 +65,7 @@ def forgotPassword(request):
         return redirect('account')
 
     if request.method == 'POST':
-        email = request.POST['email']
+        email = request.POST.get('email')
 
         try:
             auth.generate_password_reset_link(email)
@@ -116,6 +116,7 @@ def update_score(request):
 
     return JsonResponse({'error': 'Método não permitido.'}, status=405)
 
+@login_required
 def list_users_score(request):
     usuarios = db.child("usuarios").order_by_child("score").get()
 

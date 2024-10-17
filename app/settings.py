@@ -1,6 +1,5 @@
-from pathlib import Path
 import os
-from app.config import firebase, db
+from pathlib import Path
 from decouple import config
 
 
