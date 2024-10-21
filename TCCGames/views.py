@@ -20,7 +20,7 @@ def register(request):
         email = request.POST.get('email')
         name = request.POST.get('name')
         password = request.POST.get('password')
-        verifyPassword = request.POST.get('confirm-password')
+        verifyPassword = request.POST.get('verify-password')
 
         if password != verifyPassword:
             messages.error(request, 'As senhas não coincidem!')
@@ -90,7 +90,7 @@ def logout(request):
 def privacy(request):
     return render(request, 'privacy.html')
 
-# Games
+# Score logic
 
 def update_score(request):
     if request.method != 'POST':
@@ -103,8 +103,8 @@ def update_score(request):
         try:
             novo_score = int(novo_score)
 
-            usuario_data = db.child("usuarios").child(usuario_id).get().val()
-            score_user = usuario_data.get('score', 0)
+            user_data = db.child("usuarios").child(usuario_id).get().val()
+            score_user = user_data.get('score', 0)
 
             score = score_user + novo_score
             db.child("usuarios").child(usuario_id).update({"score": score})
@@ -117,7 +117,7 @@ def update_score(request):
     return JsonResponse({'error': 'Score não fornecido.'}, status=400)
 
 
-def list_users_score(request):
+def list_users_by_score(request):
     usuarios = db.child("usuarios").order_by_child("score").get()
 
     lista_usuarios = [(usuario.key(), usuario.val()) for usuario in usuarios.each()]
@@ -125,6 +125,14 @@ def list_users_score(request):
     lista_usuarios = sorted(lista_usuarios, key=lambda x: x['score'], reverse=True)
 
     return render(request, 'lista_usuarios.html', {'usuarios': lista_usuarios})
+
+def recover_user_data(request):
+    usuario_id = request.user.id
+    user_data = db.child("usuarios").child(usuario_id).get().val()
+    score = user_data.get('score', 0)
+    level = user_data.get('level', 0)
+
+    return render(request)
 
 @login_required
 def gameHangman(request):
@@ -136,6 +144,8 @@ def gameHangman(request):
         total_points = response.get('score', 0)
 
     return render(request, 'gameHangman.html', {'total_points': total_points})
+
+# Games
 
 @login_required
 def gameMemory(request):

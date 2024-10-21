@@ -1,0 +1,149 @@
+/* -------------------- Left -------------------- */
+
+@keyframes left {
+    from {
+        opacity: 0;
+        transform: translateX(-20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.left-1 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards;
+}
+
+.left-2 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 0.2s;
+}
+
+.left-3 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 0.4s;
+}
+
+.left-4 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 0.6s;
+}
+
+.left-5 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 0.8s;
+}
+
+.left-6 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 1s;
+}
+
+.left-7 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 1.2s;
+}
+
+.left-8 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 1.4s;
+}
+
+.left-9 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 1.6s;
+}
+
+.left-10 {
+    opacity: 0;
+    animation: left 0.6s ease-in forwards 1.8s;
+}
+
+/* -------------------- Right -------------------- */
+
+@keyframes right {
+    from {
+        opacity: 0;
+        transform: translateX(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-1 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards;
+}
+
+.right-2 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 0.2s;
+}
+
+.right-3 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 0.4s;
+}
+
+.right-4 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 0.6s;
+}
+
+.right-5 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 0.8s;
+}
+
+.right-6 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 1s;
+}
+
+.right-7 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 1.2s;
+}
+
+.right-8 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 1.4s;
+}
+
+.right-9 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 1.6s;
+}
+
+.right-10 {
+    opacity: 0;
+    animation: right 0.6s ease-in forwards 1.8s;
+}
+
+/* -------------------- Image -------------------- */
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.img-left {
+    animation: left 2s ease-in forwards, float 4s ease-in-out infinite;
+}
+
+.img-right {
+    animation: right 2s ease-in forwards, float 4s ease-in-out infinite;
+}
